@@ -10,38 +10,28 @@
 </head>
 
 <body>
-<div id="content">
-    <!--    Это пример, как должна выглядеть TODOшка-->
-    <div class="todo" data-id="0">
-        <h2 class="title">
-            Lorem, ipsum dolor.
-        </h2>
-        <div class="body">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae minus aliquam eveniet natus nesciunt?
+    <div class="container">
+        <div class="formWrapper">
+            <h2>Add new todo</h2>
+            <form id="form" action="#">
+                <label for="title">Enter title:</label>
+                <input type="text" id="title" name="title">
+                <label for="body">Enter description:</label>
+                <input type="text" id="body" name="body" required>
+                <label for="completed">Is completed?</label>
+                <input type="checkbox" name="completed" id="completed">
+                <button type="submit" id="submit">Add</button>
+            </form>
         </div>
-        <div class="completed">
-            <label>Is completed
-                <input type="checkbox">
-            </label>
-        </div>
-        <button class="delete">X</button>
-    </div>
-</div>
-<div class="formWrapper">
-    <h2>Add new todo</h2>
-    <form id="form" action="#">
-        <label for="title">Enter name</label>
-        <input type="text" id="title" name="title">
-        <label for="body">Enter name</label>
-        <input type="text" id="body" name="body">
-        <label for="completed">Is completed</label>
-        <input type="checkbox" name="completed" id="completed">
-        <button type="submit" id="submit">Submit</button>
-    </form>
-</div>
 
-<script src="script.js">
-</script>
+        <div id="content">
+            <h2>Your tasks</h2>
+        </div>
+    </div>
+
+    <script src="script.js">
+    </script>
+
 </body>
 
 </html>
