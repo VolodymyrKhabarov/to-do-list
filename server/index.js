@@ -69,33 +69,23 @@ app.delete("/todo/:id", (req, res) => {
 });
 
 app.patch("/todo/:id", (req, res) => {
-    console.log('req', req)
-    console.log("req.params --->", req.params);
     const { id } = req.params;
-
     let rawdata = fs.readFileSync("db.json", "utf8");
-    console.log("rawdata --->", rawdata);
-
     let content = JSON.parse(rawdata);
-    console.log("content --->", content);
 
     if (!content.find((i) => i.id == id)) {
         return res.status(404).json({ message: "Todo with that id not found" });
     } else {
         const newTodo = req.body;
-        console.log("newTodo1 --->", newTodo);
         const toWrite = content.map((i) => {
             if (i.id == id) {
-                console.log("newTodo2 --->", newTodo);
                 newTodo['id'] = parseInt(id);
                 newTodo['title'] = i.title;
                 newTodo['body'] = i.body;
                 return newTodo;
             }
-            console.log("i --->", i);
             return i;
         });
-        console.log("toWrite --->", toWrite);
         fs.writeFileSync("db.json", JSON.stringify(toWrite), (err) => {
             if (err) {
                 console.error(err);
