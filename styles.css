@@ -1,7 +1,27 @@
+body {
+  font-family: cursive;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: teal;
+  background-color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
 #content,
 .formWrapper {
   width: 768px;
-  min-height: 100px;
   margin: 0 auto;
   background-color: azure;
   display: flex;
@@ -11,12 +31,18 @@
   border: 1px solid black;
 }
 
+#content {
+  flex-grow: 3;
+  margin-top: 15px;
+}
+
 .todo {
   padding: 15px;
   border-radius: 8px;
   border: 1px solid black;
   margin-bottom: 10px;
   position: relative;
+  background-color: rgb(188, 225, 249);
 }
 
 .delete {
@@ -33,10 +59,6 @@
   align-items: center;
 }
 
-h2 {
-  margin: 5px 0;
-}
-
 .formWrapper {
   margin-top: 20px;
   background-color: lavenderblush;
@@ -47,11 +69,54 @@ h2 {
   flex-flow: row wrap;
 }
 
-#form > * {
-  width: 45%;
+#form > input {
   margin-bottom: 10px;
 }
 
-#form button {
+button {
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgb(238, 177, 177);
+  color: teal;
+}
+
+button#submit {
+  margin-left: 200px;
+  line-height: 30px;
+  font-size: 16px;
+  font-family: cursive;
+  width: 75px;
+}
+
+button.delete {
+  width: 25px;
+  height: 25px;
+}
+
+button:hover {
+  background-color: red;
+  color: white;
+}
+
+h2 {
   margin: 0 auto;
+  padding-bottom: 15px;
+}
+
+input {
+  border-radius: 5px;
+  line-height: 30px;
+  font-size: 16px;
+  font-family: cursive;
+  padding-left: 5px;
+}
+
+input#title,
+input#body {
+  width: 100%;
+}
+
+input#completed,
+input#completed_2 {
+  margin-left: 10px;
 }
