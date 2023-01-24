@@ -29,6 +29,9 @@ Listening on port 8080
 
 Endpoints:
 ```
+GET:'http://localhost:8080/todo'
+```
+```
 PATCH:'http://localhost:8080/todo/{id}'
 ```
 ```
